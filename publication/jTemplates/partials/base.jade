@@ -1,0 +1,49 @@
+doctype html
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+head
+	block title
+		title BlockTitle
+	block metadescription
+	meta(charset='utf-8')
+	meta(http-equiv='X-UA-Compatible', content='IE=edge')
+	meta(name='viewport', content='width=device-width, initial-scale=1')
+
+	if debug == true
+		link(rel='stylesheet', href='css/bootstrap.min.css')
+		link(rel='stylesheet', href='css/animate.css')
+		link(rel='stylesheet', href='css/material.min.css')
+		link(rel='stylesheet', href='css/ripples.min.css')
+		link(rel='stylesheet', href='css/main.css')
+
+	else
+		link(rel='stylesheet', href='css/fabrica-de-cajas.min.css')
+
+	// Web Fonts
+	link(href='http://fonts.googleapis.com/css?family=Roboto+Mono:400,700|Roboto:400,300' rel='stylesheet' type='text/css')
+
+	<!--[if lt IE 9]>
+	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
+	script(src='js/libs/modernizr-2.6.2.min.js')
+	//- script(src='js/libs/jquery.js')
+
+body
+		
+	//-Layout del header (logo, menu, login, registro y buscador)
+
+	include header.jade
+	
+	//-Contenido de cada page
+	block content
+
+	//- Layout del Footer
+	include footer.jade
+
+	block Scripts
+
+
+</html>
