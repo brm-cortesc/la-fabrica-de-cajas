@@ -1,3 +1,4 @@
+	var frameIndex;
 $(document).on("ready", function () {
 	(function() {
 
@@ -27,7 +28,6 @@ $(document).on("ready", function () {
 	        };
 	}());
 
-	var numberOfFrames;
 
 	function animacion() {
 				
@@ -50,6 +50,8 @@ $(document).on("ready", function () {
 				tickCount = 0,
 				ticksPerFrame = options.ticksPerFrame || 0,
 				numberOfFrames = options.numberOfFrames || 1;
+
+			console.log(numberOfFrames);
 			
 			that.context = options.context;
 			that.width = options.width;
@@ -68,8 +70,21 @@ $(document).on("ready", function () {
 	                if (frameIndex < numberOfFrames - 1) {	
 	                    // Go to the next frame
 	                    frameIndex += 1;
+	                    //console.log(that);
+
+	                    if ( frameIndex == 16 )
+	                    {
+	                    	console.log(frameIndex);
+	                    	console.log(that.image);
+	                    	machineImage.src="images/machine-sprites-02.png";
+	                    	// that.src = "images/machine-sprites-02.png";
+
+	                    }
+
+
 	                } else {
 	                    frameIndex = 0;
+	                  
 	                }
 	            }
 	        };
@@ -91,6 +106,8 @@ $(document).on("ready", function () {
 			    that.width / numberOfFrames,
 			    that.height);
 			};
+
+			console.log(frameIndex);
 			
 			return that;
 		}
@@ -124,6 +141,8 @@ $(document).on("ready", function () {
 				ticksPerFrame: 4
 			});
 
+
+
 		});
 
 
@@ -134,7 +153,7 @@ $(document).on("ready", function () {
 		machineImage.src = "images/machine-sprites-01.png";
 
 		console.log(machineImage);
-		console.log(numberOfFrames);
+		console.log(frameIndex);
 
 	};
 
