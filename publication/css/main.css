@@ -91,6 +91,29 @@ header .logo .img-responsive {
   -moz-transform: translateY(-1em);
   transform: translateY(-1em);
 }
+.container-maquina {
+  position: relative;
+}
+.container-maquina .copy {
+  text-align: left;
+  color: #fff;
+  width: 60%;
+}
+.container-maquina .accionar-maquina {
+  display: block;
+  font-size: 1.5em;
+  position: absolute;
+  right: 0;
+  ((null)): 0;
+}
+.container-maquina .accionar-maquina span {
+  display: block;
+  font-size: 0.65em;
+}
+footer {
+  background-color: #163349;
+  padding: 1em 0.2em;
+}
 .u-bg-blanco {
   background-color: #fff;
 }
