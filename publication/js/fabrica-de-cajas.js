@@ -1,4 +1,4 @@
-	var frameIndex;
+var alto = 0;
 $(document).on("ready", function () {
 	(function() {
 
@@ -42,7 +42,6 @@ $(document).on("ready", function () {
 		  machine.update();
 		  machine.render();
 		}
-		
 		function sprite (options) {
 		
 			var that = {},
@@ -51,7 +50,7 @@ $(document).on("ready", function () {
 				ticksPerFrame = options.ticksPerFrame || 0,
 				numberOfFrames = options.numberOfFrames || 1;
 
-			console.log(numberOfFrames);
+			// console.log(numberOfFrames);
 			
 			that.context = options.context;
 			that.width = options.width;
@@ -70,22 +69,38 @@ $(document).on("ready", function () {
 	                if (frameIndex < numberOfFrames - 1) {	
 	                    // Go to the next frame
 	                    frameIndex += 1;
-	                    //console.log(that);
-
-	                    if ( frameIndex == 16 )
-	                    {
-	                    	console.log(frameIndex);
-	                    	console.log(that.image);
-	                    	machineImage.src="images/machine-sprites-02.png";
-	                    	// that.src = "images/machine-sprites-02.png";
-
-	                    }
 
 
-	                } else {
+	                } if ( frameIndex == 9 && alto < 3870) {
 	                    frameIndex = 0;
+
+	                    alto = alto += 430;
 	                  
 	                }
+
+	                if ( frameIndex == 9 && alto == 3870) {
+	                    
+	                    frameIndex = 0;
+	                    machine = sprite({
+	                    	context: canvas.getContext("2d"),
+	                    	width: 7600,
+	                    	height: 428,
+	                    	image: that.image,
+	                    	numberOfFrames: 1,
+	                    	ticksPerFrame: 7
+	                    });
+
+	                    alto = 0;
+	                    return;
+	                  
+	                }
+
+	                // else{
+	                // 	frameIndex = 0;
+
+	                //     alto = 0;
+
+	                // }
 	            }
 	        };
 			
@@ -98,7 +113,7 @@ $(document).on("ready", function () {
 			  that.context.drawImage(
 			    that.image,
 			    frameIndex * that.width / numberOfFrames,
-			    0,
+			    alto,//
 			    that.width / numberOfFrames,
 			    that.height,
 			    0,
@@ -107,7 +122,7 @@ $(document).on("ready", function () {
 			    that.height);
 			};
 
-			console.log(frameIndex);
+			// console.log(frameIndex);
 			
 			return that;
 		}
@@ -123,7 +138,7 @@ $(document).on("ready", function () {
 		// Create sprite
 		machine = sprite({
 			context: canvas.getContext("2d"),
-			width: 12920,
+			width: 7600,
 			height: 428,
 			image: machineImage,
 			numberOfFrames: 1,
@@ -134,26 +149,21 @@ $(document).on("ready", function () {
 			
 			machine = sprite({
 				context: canvas.getContext("2d"),
-				width: 12920,
+				width: 7600,
 				height: 428,
 				image: machineImage,
-				numberOfFrames: 17,
-				ticksPerFrame: 4
+				numberOfFrames: 10,
+				ticksPerFrame: 7
 			});
 
 
 
 		});
-
-
 		
 		// Load sprite sheet
 		machineImage.addEventListener("load", machineLoop);
 		$(machineImage).load(machineLoop);
-		machineImage.src = "images/machine-sprites-01.png";
-
-		console.log(machineImage);
-		console.log(frameIndex);
+		machineImage.src = "images/machine-sprite.png";
 
 	};
 
