@@ -1,7 +1,24 @@
+.container-maquina
+	position relative
+	.copy
+		color #fff
+		text-align left
+		width 60%
+		
+	.accionar-maquina
+		absolute right 0
+		display block
+		font-size 1.5em
+		
+		span
+			display block
+			font-size 0.65em
+			
+
 .description
 	path("bg-desc.jpg")
-	background-repeat no-repeat
 	background-position top center
+	background-repeat no-repeat
 	background-size 100%
 	min-height 29em
 	
@@ -24,15 +41,15 @@
 		font-family Roboto
 		font-size 1.5em
 		font-weight Light
-		width 50%
-		text-align center
 		margin 1em auto
+		text-align center
+		width 50%
 		
 
 	.lista-herramientas
 		list-style-type none
-		width 70%
 		margin 0 auto
+		width 80%
 		
 		li
 			// list-style-type none
@@ -43,21 +60,84 @@
 			
 			&:hover
 				transform translateY(-1em)
-				
 
 
-.container-maquina
-	position relative
-	.copy
-		text-align left
-		color #fff
-		width 60%
+.herramientas-propias
+	animation-duration 0.1s
+	height 0			
+	opacity 0
+	transition all ease-in-out 0.3s
+	
+	.listado-herramientas
+		list-style-type none
 		
-	.accionar-maquina
-		display block
-		font-size 1.5em
-		absolute right 0
+		li
+			animation-duration 0.5s
+			display inline-block
+			margin-bottom 2.5em
+			margin-left 0.5em
+			margin-right @margin-left
+			transform perspective(400px) rotate3d(1, 0, 0, 90deg)
+			vertical-align middle
+			
+	
+	.img-circle
+		box-shadow 0px 0px 5px 5px rgba(0, 0, 0, .25)
+
+.mostrar
+	display block
+	margin 2em auto
+	
+
+
+.fadeIn
+	height auto
+	
+.seccion-herramienta
+	// position relative
+	
+	article
+		overflow hidden
+		position relative
+		background-color #fff
 		
-		span
-			display block
-			font-size 0.65em
+	h1, .icono, .descripcion
+		position relative
+		z-index 1
+		
+	h1
+		text-align center
+		margin-bottom 0.4em
+		margin-top 4.7em
+		
+	.cabezote
+		absolute top 0
+		background-color Verde
+		box-shadow 0px 0px 5px 5px rgba(0, 0, 0, .15)
+		min-height 19.5em
+		width 100%
+		z-index 0
+		
+	.descripcion
+		padding 0.5em 1em
+		margin 0 auto
+		max-width 40em
+		
+	.icono
+		box-shadow 0px 0px 5px 5px rgba(0, 0, 0, .15)
+		margin 0 auto
+		top 10em
+
+
+//Herramientas
+
+.herramienta-krustyland
+	
+	h1
+		color #77183c
+
+	.cabezote
+		path("header-krustyland.jpg")
+		background-position top center
+		background-repeat no-repeat
+		background-size 100%

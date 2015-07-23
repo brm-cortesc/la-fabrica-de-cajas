@@ -1,4 +1,6 @@
-var alto = 0;
+
+//script de animación de la fábrica
+
 $(document).on("ready", function () {
 	(function() {
 
@@ -30,6 +32,8 @@ $(document).on("ready", function () {
 
 
 	function animacion() {
+	/*Alto de cada frame de la animación*/
+		var alto = 0;	
 				
 		var machine,
 			machineImage,
@@ -42,16 +46,16 @@ $(document).on("ready", function () {
 		  machine.update();
 		  machine.render();
 		}
+
+
 		function sprite (options) {
 		
 			var that = {},
-				frameIndex = 0,
-				tickCount = 0,
-				ticksPerFrame = options.ticksPerFrame || 0,
-				numberOfFrames = options.numberOfFrames || 1;
+				frameIndex = 0,//Punto inicial
+				tickCount = 0,//velocidad inicial
+				ticksPerFrame = options.ticksPerFrame || 0, //Velocidad a la que debe cambiar
+				numberOfFrames = options.numberOfFrames || 1;//Cantidad de frames (imagenes) horizontales que tiene el sprite
 
-			// console.log(numberOfFrames);
-			
 			that.context = options.context;
 			that.width = options.width;
 			that.height = options.height;
@@ -73,13 +77,14 @@ $(document).on("ready", function () {
 
 	                } if ( frameIndex == 9 && alto < 3870) {
 	                    frameIndex = 0;
-
+	                    /*Suma el alto del frame en caso de tener una animación vertical y horizontal*/
 	                    alto = alto += 430;
 	                  
 	                }
 
 	                if ( frameIndex == 9 && alto == 3870) {
 	                    
+	                    /*paramos la animacion*/
 	                    frameIndex = 0;
 	                    machine = sprite({
 	                    	context: canvas.getContext("2d"),
@@ -106,45 +111,45 @@ $(document).on("ready", function () {
 			
 			that.render = function () {
 			
-			  // Clear the canvas
+			  // Limpiamos el canvas cada vez que cambia
 			  that.context.clearRect(0, 0, that.width, that.height);
 			  
-			  // Draw the animation
+			  // Pintamos la animacion
 			  that.context.drawImage(
-			    that.image,
-			    frameIndex * that.width / numberOfFrames,
-			    alto,//
-			    that.width / numberOfFrames,
-			    that.height,
+			    that.image,// imagen que cargamos
+			    frameIndex * that.width / numberOfFrames, //Ancho
+			    alto,//alto
+			    that.width / numberOfFrames,//esto calcula el ancho de cada frame individual
+			    that.height, 
 			    0,
 			    0,
 			    that.width / numberOfFrames,
 			    that.height);
 			};
-
-			// console.log(frameIndex);
 			
 			return that;
 		}
 		
-		// Get canvas
+		// obtenemos el elemento del html y damos dimensiones
 		canvas = document.getElementById("maquina");
 		canvas.width = 760;
 		canvas.height = 428;
 		
-		// Create sprite sheet
+		// Creamos la hoja del sprite
 		machineImage = new Image();	
 		
-		// Create sprite
+		// Creamos el sprite 
 		machine = sprite({
 			context: canvas.getContext("2d"),
 			width: 7600,
 			height: 428,
 			image: machineImage,
 			numberOfFrames: 1,
-			ticksPerFrame: 4
+			ticksPerFrame: 1
 		});
 
+
+		/*accionamos la maquina*/
 		$(".accionar-maquina").on("click", function () {
 			
 			machine = sprite({
@@ -160,7 +165,7 @@ $(document).on("ready", function () {
 
 		});
 		
-		// Load sprite sheet
+		// Cargamos la hoja del sprite al elemento html
 		machineImage.addEventListener("load", machineLoop);
 		$(machineImage).load(machineLoop);
 		machineImage.src = "images/machine-sprite.png";
@@ -168,5 +173,37 @@ $(document).on("ready", function () {
 	};
 
 	animacion();
+
+});
+
+
+//Click para mostrar herramientas propias
+$(document).on("click", ".mostrar", function(){
+
+	$(".herramientas-propias").addClass('animated fadeIn');
+
+	var i = 0;
+
+	function mostrarLista () {
+
+		var elementos = $(".listado-herramientas li");
+
+		function next () {
+			$( elementos[i] ).addClass('animated flipInX');
+			i += 1 ;
+			$( elementos[i] ).one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', next);
+
+			console.log(elementos[i]);
+		};
+
+		$(elementos[i]).addClass('animated flipInX');
+		$(elementos[i]).one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', next);
+
+		
+
+		// next();
+	};
+
+	$(".herramientas-propias").one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', mostrarLista);
 
 });
