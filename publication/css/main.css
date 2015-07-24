@@ -1,4 +1,4 @@
-/*! Fabrica de Cajas brm - v0.1.0 - 2015-07-22
+/*! Fabrica de Cajas brm - v0.1.0 - 2015-07-24
 * https://github.com/cortesc/HTML
 * Copyright (c) 2015 Cristian Cortés; Licensed MIT */
 a {
@@ -195,11 +195,66 @@ header .logo .img-responsive {
   margin: 0 auto;
   top: 10em;
 }
+.herramienta-don-barredora h1 {
+  color: #c62c38;
+}
+.herramienta-don-barredora .cabezote {
+  background-image: url("../images/header-donbarredora.jpg");
+  background-position: top center;
+  background-repeat: no-repeat;
+  -webkit-background-size: 100%;
+  -moz-background-size: 100%;
+  background-size: 100%;
+}
+.herramienta-kodos h1 {
+  color: #3a99c3;
+}
+.herramienta-kodos .cabezote {
+  background-image: url("../images/header-kodos.jpg");
+  background-position: top center;
+  background-repeat: no-repeat;
+  -webkit-background-size: 100%;
+  -moz-background-size: 100%;
+  background-size: 100%;
+}
 .herramienta-krustyland h1 {
   color: #77183c;
 }
 .herramienta-krustyland .cabezote {
   background-image: url("../images/header-krustyland.jpg");
+  background-position: top center;
+  background-repeat: no-repeat;
+  -webkit-background-size: 100%;
+  -moz-background-size: 100%;
+  background-size: 100%;
+}
+.herramienta-linguo h1 {
+  color: #efbb60;
+}
+.herramienta-linguo .cabezote {
+  background-image: url("../images/header-linguo.jpg");
+  background-position: top center;
+  background-repeat: no-repeat;
+  -webkit-background-size: 100%;
+  -moz-background-size: 100%;
+  background-size: 100%;
+}
+.herramienta-superbarra h1 {
+  color: #efb525;
+}
+.herramienta-superbarra .cabezote {
+  background-image: url("../images/header-superbarra.jpg");
+  background-position: top center;
+  background-repeat: no-repeat;
+  -webkit-background-size: 100%;
+  -moz-background-size: 100%;
+  background-size: 100%;
+}
+.herramienta-mr-chispa h1 {
+  color: #13417e;
+}
+.herramienta-mr-chispa .cabezote {
+  background-image: url("../images/headers-herramientas_Mr-chispa.jpg");
   background-position: top center;
   background-repeat: no-repeat;
   -webkit-background-size: 100%;
