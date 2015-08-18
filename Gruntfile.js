@@ -91,7 +91,7 @@ module.exports = function(grunt) {
 					 files: [ {
 						 cwd: "publication/jTemplates", //Directorio donde se encuentran los archivos
 						 src: [ '**/*.jade', '!**/partials/*.jade', '!**/modules/*.jade' ],//ignoramos las carpetas con los fragmentos de código
-						 dest: "publication/",
+						 dest: "publication/templates/",
 						 expand: true,//Esto  es para exportar el html comprimido o extendido
 						 ext: ".html" //Extensión de los archivos
 					 } ]
@@ -100,18 +100,17 @@ module.exports = function(grunt) {
 
 		//Se usa para reiniciar automaticamente el navegador al momento de modificar algún archivo *leer reload.txt*
 		browserSync: {
-					dev: {
-							bsFiles: {
-									src : ['publication/**/*.*','publication/*.*']
-							},
-							options: {
-									watchTask: true, // < VERY important
-									injectChanges: true,
-									server: {
-												baseDir: "publication/"
-											}
-							}
+				dev: {
+					bsFiles: {
+						src: 'publication/**/*.php'
+					},
+					options: {
+						proxy: '127.0.0.1:8010', //our PHP server
+						port: 8080, // our new port
+						open: true,
+						watchTask: true
 					}
+				}
 			},
 				//Se utiliza para ejecutar comandos de consola desde el archivo
 		shell: {
@@ -139,10 +138,19 @@ module.exports = function(grunt) {
 							},
 							command: 'git add .'
 					},
-		}
-
+			}
+	
 	
 		},
+		//Crea el servidor PHP
+		php: {
+            dev: {
+                options: {
+                    port: 8010,
+                    base: 'publication'
+                }
+            }
+        },
 		//Mantiene una tarea que observa los archivos y ejecuta tareas atumaticamente al momento de detectar cambios
 		watch: {
 			brm: {
@@ -153,7 +161,10 @@ module.exports = function(grunt) {
 						'publication/*.styl',
 						'publication/*.js',
 						'publication/**/**.js',
-						'publication/images/**.*'
+						'publication/images/**.*',
+						'!publication/templates_c/*.*',
+						'!publication/templates/*.*',
+						'!src/**/*.*'
 						],
 
 				tasks : ["jade", "stylus:compile"],
@@ -168,7 +179,7 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-concat');
 	grunt.loadNpmTasks('grunt-contrib-cssmin');
 	grunt.loadNpmTasks('grunt-contrib-uglify');
-	grunt.loadNpmTasks('grunt-contrib-qunit');
+	grunt.loadNpmTasks('grunt-php');
 	grunt.loadNpmTasks('grunt-contrib-jshint');
 	grunt.loadNpmTasks('grunt-contrib-jade');
 	grunt.loadNpmTasks('grunt-contrib-watch');
@@ -187,5 +198,5 @@ module.exports = function(grunt) {
 	grunt.registerTask('observar', ['watch:brm','browserSync']);
 	grunt.registerTask('depurar', ['jshint']);
 
-	grunt.registerTask('default', ['browserSync','watch']); 
+	grunt.registerTask('default', ['php','browserSync','watch']); 
 };

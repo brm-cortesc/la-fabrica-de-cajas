@@ -173,7 +173,28 @@ $(document).on("ready", function () {
 	};
 
 	animacion();
+	/// Animación Texto
+	function testAnim(div) {
+		$('#textoDescr > div.active').removeClass('active').addClass('fadeOutRight animated').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
+			$(this).removeClass('fadeOutRight animated');
+			
+			$(this).addClass('hide');
+			$('#'+div).removeClass('hide').addClass( 'fadeInLeft animated').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
+				$(this).removeClass('fadeInLeft animated');
+				$(this).addClass('active');
+				//$('#textoDescr > div').addClass('hide');
 
+			});
+		});
+
+		
+	}
+	$( ".herramienta" ).hover(function() {
+	    $( this ).addClass( "hover" );
+	    var her=$(this).attr('data-bar');
+	console.log(her);
+	testAnim(her)
+	  });
 });
 
 
