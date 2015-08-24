@@ -102,7 +102,7 @@ if (isset($authUrl)) {
 		$_SESSION['foto'] = $gm_results['picture'];
 		$_SESSION['email'] = $gm_results['email'];
 		$_SESSION['img']   = $gm_results['picture'];
-		header('Location:fabrica.html');
+		header('Location:fabrica.php');
 		/* $smarty->display("grafica.html"); */
 	}
 } 

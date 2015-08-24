@@ -1,5 +1,12 @@
-
+var href=window.location.href
+var file = href.split("/");
 //script de animación de la fábrica
+function OpenInNewTab(url) {
+  	//window.open('desarrollador.zip', '_blank', 'toolbar=yes, location=yes, status=yes, menubar=yes, scrollbars=yes');
+  	//window.location='desarrollador.zip';
+  	this.location.href="zip/desarrollador.zip" 
+  
+}
 
 $(document).on("ready", function () {
 	(function() {
@@ -96,6 +103,7 @@ $(document).on("ready", function () {
 	                    });
 
 	                    alto = 0;
+	                    OpenInNewTab("descarga.php");
 	                    return;
 	                  
 	                }
@@ -172,9 +180,12 @@ $(document).on("ready", function () {
 
 	};
 
-	animacion();
+	if(file[3]=="fabrica.php"){
+		animacion();
+	}
+	//
 	/// Animación Texto
-	function testAnim(div) {
+	function iniAnim(div) {
 		$('#textoDescr > div.active').removeClass('active').addClass('fadeOutRight animated').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
 			$(this).removeClass('fadeOutRight animated');
 			
@@ -189,12 +200,28 @@ $(document).on("ready", function () {
 
 		
 	}
-	$( ".herramienta" ).hover(function() {
-	    $( this ).addClass( "hover" );
-	    var her=$(this).attr('data-bar');
-	console.log(her);
-	testAnim(her)
-	  });
+
+	$( ".lista-herramientas" ).hover(
+		function () {
+			//$(this).css({"background-color":"blue"});
+		}, 
+		function () {
+			iniAnim('ini');	
+		}
+	);
+	$( ".herramienta" ).hover(
+		function () {
+			$( this ).addClass( "hover" );
+			var her=$(this).attr('data-bar');
+			iniAnim(her);
+		}, 
+		function () {
+			//$(this).css({"background-color":"blue"});
+		}
+	);
+	$(".logo").click(function(){
+		window.location="fabrica.php";
+	});
 });
 
 
@@ -214,7 +241,7 @@ $(document).on("click", ".mostrar", function(){
 			i += 1 ;
 			$( elementos[i] ).one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', next);
 
-			console.log(elementos[i]);
+			//console.log(elementos[i]);
 		};
 
 		$(elementos[i]).addClass('animated flipInX');
@@ -228,3 +255,32 @@ $(document).on("click", ".mostrar", function(){
 	$(".herramientas-propias").one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', mostrarLista);
 
 });
+//Click para mostrar herramientas propias
+if(file[3]!="fabrica.php"){
+	document.getElementById('vid-herramienta').addEventListener('pause',stopVideo,false);
+	document.getElementById('vid-herramienta').addEventListener('ended',stopVideo,false);
+
+}
+function stopVideo(e) {
+    // What you want to do after the event
+    //console.log("Pause");
+    //alert("Pause");
+    AnimVideo('ini');
+}
+function AnimVideo(ac) {
+	if(ac=='ini'){
+	    $('#vid-herramienta').removeClass().addClass('slideOutUp animated').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
+			$(this).removeClass().addClass('hide');
+			$('.cabezote').removeClass('hide').addClass('slideInUp animated').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
+				$(this).removeClass('slideInUp animated');
+				$('.img-circle').removeClass('hide').addClass('slideInUp animated').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
+					$(this).removeClass('slideInUp animated');
+					$('h1,.descripcion').removeClass('hide').addClass('slideInUp animated').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
+						$(this).removeClass('slideInUp animated');
+				
+					});
+				});
+			});
+	    });
+	}
+};

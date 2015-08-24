@@ -1,7 +1,11 @@
 <?php
  ini_set('display_errors', E_ALL);
-require("db/requires.php");
+require("db/requires.php"); 
+if(isset($_SESSION['email']) && !empty($_SESSION['email'])){
+	$smarty->display("linguo.html"); 
+}else{
+	//$smarty->display("kodos.html"); 
 
-
-$smarty->display("linguo.html"); 
+	header("Location: index.php");
+}
 ?>

@@ -1,4 +1,4 @@
-/*! Fabrica de Cajas brm - v0.1.0 - 2015-08-14
+/*! Fabrica de Cajas brm - v0.1.0 - 2015-08-20
 * https://github.com/cortesc/HTML
 * Copyright (c) 2015 Cristian Cortés; Licensed MIT */
 a {
@@ -71,7 +71,7 @@ header .logo .img-responsive {
   -webkit-background-size: 100%;
   -moz-background-size: 100%;
   background-size: 100%;
-  min-height: 19em;
+  min-height: 34em;
 }
 .description h2 {
   color: #fff;
@@ -168,10 +168,19 @@ header .logo .img-responsive {
   overflow: hidden;
   position: relative;
   background-color: #fff;
+  min-height: 40em;
+}
+.seccion-herramienta video {
+  max-height: 450px;
 }
 .seccion-herramienta h1,
 .seccion-herramienta .icono,
 .seccion-herramienta .descripcion {
+  -o-animation-duration: 0.3s;
+  -ms-animation-duration: 0.3s;
+  -webkit-animation-duration: 0.3s;
+  -moz-animation-duration: 0.3s;
+  animation-duration: 0.3s;
   position: relative;
   z-index: 1;
 }
@@ -180,7 +189,19 @@ header .logo .img-responsive {
   margin-bottom: 0.4em;
   margin-top: 4.7em;
 }
+.seccion-herramienta #vid-herramienta {
+  -o-animation-duration: 0.3s;
+  -ms-animation-duration: 0.3s;
+  -webkit-animation-duration: 0.3s;
+  -moz-animation-duration: 0.3s;
+  animation-duration: 0.3s;
+}
 .seccion-herramienta .cabezote {
+  -o-animation-duration: 0.3s;
+  -ms-animation-duration: 0.3s;
+  -webkit-animation-duration: 0.3s;
+  -moz-animation-duration: 0.3s;
+  animation-duration: 0.3s;
   position: absolute;
   top: 0;
   ((null)): 0;
@@ -280,4 +301,14 @@ footer {
 .u-no-border {
   padding: 0;
   margin: 0;
+}
+.icono,
+.img-circle.,
+h1,
+.descripcion {
+  -o-animation-duration: 0.1s;
+  -ms-animation-duration: 0.1s;
+  -webkit-animation-duration: 0.1s;
+  -moz-animation-duration: 0.1s;
+  animation-duration: 0.1s;
 }
