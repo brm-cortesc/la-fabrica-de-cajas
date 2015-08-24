@@ -180,7 +180,7 @@ $(document).on("ready", function () {
 
 	};
 
-	if(file[3]=="fabrica.php"){
+	if(file[4]=="fabrica.php"){
 		animacion();
 	}
 	//
@@ -256,7 +256,7 @@ $(document).on("click", ".mostrar", function(){
 
 });
 //Click para mostrar herramientas propias
-if(file[3]!="fabrica.php"){
+if(file[4]!="fabrica.php"){
 	document.getElementById('vid-herramienta').addEventListener('pause',stopVideo,false);
 	document.getElementById('vid-herramienta').addEventListener('ended',stopVideo,false);
 
