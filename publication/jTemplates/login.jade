@@ -1,12 +1,70 @@
-extends partials/base.jade
-
-block title
+doctype html
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+head
 	title brm | La Fábrica de Cajas
+	meta(charset='utf-8')
+	meta(http-equiv='X-UA-Compatible', content='IE=edge')
+	meta(name='viewport', content='width=device-width, initial-scale=1')
 
-block content
-	section.container-fluid
+	if debug == true
+		link(rel='stylesheet', href='css/bootstrap.min.css')
+		link(rel='stylesheet', href='css/animate.css')
+		link(rel='stylesheet', href='css/material.min.css')
+		link(rel='stylesheet', href='css/ripples.min.css')
+		link(rel='stylesheet', href='css/main.css')
+
+	else
+		link(rel='stylesheet', href='css/fabrica-de-cajas.min.css')
+
+	// Web Fonts
+	link(href='http://fonts.googleapis.com/css?family=Roboto+Mono:400,700|Roboto:400,300' rel='stylesheet' type='text/css')
+
+	<!--[if lt IE 9]>
+	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
+	script(src='js/libs/modernizr-2.6.2.min.js')
+	script(src='js/libs/jquery.js')
+
+body.login
+		
+	//-Layout del header (logo, menu, login, registro y buscador)
+
+	//- include header.jade
+
+	header.container-fluid
+		img.logo-login.img-responsive(src="images/logo-fabrica.png", alt="brm | La Fábrica de Cajas")
+	
 		div.row
 			article.col-lg-12.col-md-12.col-sm-12.col-xs-12
 		
-				button.btn.btn-info.
-					Ingresa
+				a.btn.btn-info.login(href="https://accounts.google.com/o/oauth2/auth?response_type=code&redirect_uri=http%3A%2F%2Fabraham.brm.com.co%2FfabricaDeCajas%2Findex.php&client_id=568231754559-nn3bpempp9oj0ahgs1jcs6j134nhd98q.apps.googleusercontent.com&scope=https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email&access_type=online&approval_prompt=auto").
+					Ingresar
+	//-Contenido de cada page
+	//- section.container-fluid
+
+
+	section.container-fluid.u-no-border.description
+		div.row
+			div.nubes
+			div.sol
+			article.col-lg-7.col-md-7.col-sm-7.col-xs-12
+				h2.
+					En un lugar de la Mancha, de cuyo nombre no quiero acordarme, no ha mucho tiempo que vivía un hidalgo de los de lanza en astillero, adarga antigua, rocín flaco y galgo corredor.
+
+				
+			div.col-lg-5.col-md-5.col-sm-5.hidden-xs
+				div.arbol.arbol1
+				div.arbol.arbol2
+				div.arbol.arbol3
+
+	//- Layout del Footer
+	include partials/footer.jade
+
+	block Scripts
+
+
+</html>

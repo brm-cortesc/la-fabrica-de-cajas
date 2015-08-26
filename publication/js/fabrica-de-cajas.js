@@ -284,3 +284,10 @@ function AnimVideo(ac) {
 	    });
 	}
 };
+
+//Volver
+
+$(document).on('click', '.btn-danger', function() {
+
+	window.location.href="/fabrica.php"
+});
