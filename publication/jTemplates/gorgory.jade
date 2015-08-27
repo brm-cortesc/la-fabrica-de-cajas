@@ -7,6 +7,7 @@ block content
 	section.container-fluid.seccion-herramienta
 		div.row
 			article.herramienta-gorgory
+				a.btn.btn-danger.btn-fab.btn-raised.mdi-navigation-cancel(href="../fabrica.php")
 				img.img-circle.img-responsive.icono(src="images/iconos/gorgory.png", alt="gorgory", width="150")
 				figure.cabezote
 					//- img.bg.img-responsive(src="images/header-linguo.jpg")
@@ -15,7 +16,7 @@ block content
 
 				div.row.descripcion
 					div.col-lg-6.col-md-6.col-sm-6.col-xs-12
-						video(width="560", height="340", autoplay)
+						video(width="100%", height="340", autoplay)
 							source(src="videos/Gorgory.mp4", type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"')
 						
 					div.col-lg-6.col-md-6.col-sm-6.col-xs-12
@@ -23,4 +24,9 @@ block content
 						p.
 							!Entendido¡... !Atención¡ todas las unidades dirigirse a "Calle falsa 123" repito todas las unidades dirigirse a "Calle falas 123"
 						p.
-							Yo soy Clancy Gorgory y hago parte de la familia de de BRM, mi función como jefe de seguridad en los desarrollos es cuidar de toda los bites que viven alojados en los servidores de la compañía
+							Yo soy Clancy Gorgory y hago parte de la familia de de BRM, mi función como jefe de seguridad en los desarrollos es cuidar de toda los bites que viven alojados en los servidores de la compañía.
+						p
+							a.btn.btn-info.btn-sm(href="https://github.com/BRMBog/servidores-brm", target="_blank").
+								Ver Proyecto en GitHub.
+							//-a.btn.btn-info.btn-sm(href="#").
+								Ver video tutorial uso.

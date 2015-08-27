@@ -7,14 +7,20 @@ block content
 	section.container-fluid.seccion-herramienta
 		div.row
 			article.herramienta-linguo
-				button.btn.btn-danger.btn-fab.btn-raised.mdi-navigation-cancel
-				video#vid-herramienta(width='100%', controls='', autoplay='')
-					source(src='videos/Linguo.mp4', type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"')
-				img.hide.img-circle.img-responsive.icono(src='images/iconos/linguo.png', alt='linguo', width='150')
-				figure.cabezote.hide
-				h1.hide Linguo
-				div.row.descripcion.hide
-					div.col-lg-12.col-md-12.col-sm-12.col-xs-12
+				a.btn.btn-danger.btn-fab.btn-raised.mdi-navigation-cancel(href="../fabrica.php")
+				img.img-circle.img-responsive.icono(src="images/iconos/linguo.png", alt="linguo", width="150")
+				figure.cabezote
+					//- img.bg.img-responsive(src="images/header-linguo.jpg")
+
+				h1 Linguo
+
+				div.row.descripcion
+					div.col-lg-6.col-md-6.col-sm-6.col-xs-12
+						video(width="100%", height="340", autoplay controls)
+							source(src="videos/Linguo.mp4", type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"')
+						
+					div.col-lg-6.col-md-6.col-sm-6.col-xs-12
+
 						p.
 							Linguo estááááá vivo.
 
@@ -23,4 +29,10 @@ block content
 							- Mi no querer errores.<br />
 							- Yo no quiero errores.
 
-						p Mi nombre es Linguo, soy un desarrollo creado para la detección de errores en los formularios.
+						p.
+							Mi nombre es Linguo, soy un desarrollo creado para la detección de errores en los formularios.
+
+						a.btn.btn-info.btn-sm(href="https://github.com/brm-cortesc/blackbox-tests", target="_blank").
+							Ver Proyecto en GitHub.
+						a.btn.btn-info.btn-sm(href="videos/tutorial/Linguo.mp4", target="_blank").
+							Ver video tutorial uso.
