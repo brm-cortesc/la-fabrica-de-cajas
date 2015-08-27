@@ -6,7 +6,7 @@ if(isset($_SESSION['email']) && !empty($_SESSION['email'])){
 }else{
 	//$smarty->display("kodos.html"); 
 
-	header("Location: index.php");
-	// $smarty->display("fabrica.html");
+	//("Location: index.php");
+	 $smarty->display("fabrica.html");
 }
 ?>

@@ -180,9 +180,7 @@ $(document).on("ready", function () {
 
 	};
 
-	if(file[4]=="fabrica.php"){
 		animacion();
-	}
 	//
 	/// Animación Texto
 	function iniAnim(div) {
@@ -256,11 +254,9 @@ $(document).on("click", ".mostrar", function(){
 
 });
 //Click para mostrar herramientas propias
-if(file[4]!="fabrica.php"){
-	document.getElementById('vid-herramienta').addEventListener('pause',stopVideo,false);
-	document.getElementById('vid-herramienta').addEventListener('ended',stopVideo,false);
+document.getElementById('vid-herramienta').addEventListener('pause',stopVideo,false);
+document.getElementById('vid-herramienta').addEventListener('ended',stopVideo,false);
 
-}
 function stopVideo(e) {
     // What you want to do after the event
     //console.log("Pause");
@@ -287,7 +283,7 @@ function AnimVideo(ac) {
 
 //Volver
 
-$(document).on('click', '.btn-danger', function() {
+/*$(document).on('click', '.btn-danger', function() {
 
 	window.location.href="/fabrica.php"
-});
+});*/
