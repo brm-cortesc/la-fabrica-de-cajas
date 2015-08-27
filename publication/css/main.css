@@ -119,6 +119,7 @@ header .logo .img-responsive {
   margin: 1em auto;
   text-align: center;
   width: 50%;
+  height: 6em;
 }
 .herramientas-login .lista-herramientas {
   list-style-type: none;
