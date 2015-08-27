@@ -238,6 +238,10 @@ header .logo .img-responsive {
   margin: 0 auto;
   top: 10em;
 }
+.tutorial h1 {
+  color: #0092b3 !important;
+  margin-top: 0.3em !important;
+}
 .herramienta-don-barredora h1 {
   color: #c62c38;
 }
