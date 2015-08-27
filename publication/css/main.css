@@ -50,13 +50,16 @@ h6 {
   margin: 0.4em !important;
   z-index: 10;
 }
+.btn-primary:not(.btn-link):not(.btn-flat) {
+  background-color: #692d81;
+}
 header {
   background-color: #163349;
 }
 header .logo {
   display: block;
   margin: 0.5em auto;
-  text-align: center;
+  text-align: right;
   cursor: pointer;
 }
 header .logo .img-responsive {
@@ -87,6 +90,10 @@ header .logo .img-responsive {
 .container-maquina .accionar-maquina span {
   display: block;
   font-size: 0.65em;
+}
+.close-s {
+  float: right;
+  margin-top: 2.7em;
 }
 .description {
   background-image: url("../images/bg-desc.jpg");
@@ -160,6 +167,10 @@ header .logo .img-responsive {
 }
 .herramientas-propias .listado-herramientas {
   list-style-type: none;
+  margin: 0 auto;
+  max-width: 54em;
+  padding: 0;
+  text-align: center;
 }
 .herramientas-propias .listado-herramientas li {
   -o-animation-duration: 0.5s;
