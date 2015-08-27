@@ -1,0 +1,16 @@
+extends partials/base.jade
+
+block title
+	title brm | La Fábrica de Cajas
+
+block content
+	section.container-fluid.seccion-herramienta
+		div.row
+				article.herramienta
+					a.btn.btn-danger.btn-fab.btn-raised.mdi-navigation-cancel(href="fabrica.php")
+					h1.
+						Tutorial {# $video|ucfirst #}
+					div.descripcion
+						div.col-lg-12.col-md-12.col-sm-12.col-xs-12
+							video(width="100%", height="500", controls)
+								source(src="videos/tutorial/{# $video #}.mp4", type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"')
