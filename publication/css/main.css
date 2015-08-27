@@ -57,6 +57,7 @@ header .logo {
   display: block;
   margin: 0.5em auto;
   text-align: center;
+  cursor: pointer;
 }
 header .logo .img-responsive {
   display: inline-block;

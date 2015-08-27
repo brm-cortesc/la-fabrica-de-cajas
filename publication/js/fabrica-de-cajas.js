@@ -7,6 +7,10 @@ function OpenInNewTab(url) {
   	this.location.href="zip/desarrollador.zip" 
   
 }
+var path=location.pathname;  // /tmp/test.html
+var res = path.split("/");
+
+var file=res[res.length-1];
 
 $(document).on("ready", function () {
 	(function() {
@@ -179,8 +183,10 @@ $(document).on("ready", function () {
 		machineImage.src = "images/machine-sprite.png";
 
 	};
-
+	//console.log(file);
+	if(file=="fabrica.php"){
 		animacion();
+	}
 	//
 	/// Animación Texto
 	function iniAnim(div) {
@@ -254,7 +260,7 @@ $(document).on("click", ".mostrar", function(){
 
 });
 //Click para mostrar herramientas propias
-document.getElementById('vid-herramienta').addEventListener('pause',stopVideo,false);
+/*document.getElementById('vid-herramienta').addEventListener('pause',stopVideo,false);
 document.getElementById('vid-herramienta').addEventListener('ended',stopVideo,false);
 
 function stopVideo(e) {
@@ -279,7 +285,7 @@ function AnimVideo(ac) {
 			});
 	    });
 	}
-};
+};*/
 
 //Volver
 
