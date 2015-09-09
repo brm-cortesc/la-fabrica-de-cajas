@@ -36,7 +36,13 @@ body.login
 	//- include header.jade
 
 	header.container-fluid
-		img.logo-login.img-responsive(src="images/logo-fabrica.png", alt="brm | La Fábrica de Cajas")
+
+		div.row
+			article.col-lg-5.col-md-5.col-sm-5.col-xs-12.col-lg-offset-1.col-md-offset-1.col-sm-offset-1
+				img.logo-login.img-responsive(src="images/logo-fabrica.png", alt="brm | La Fábrica de Cajas")
+			article.col-lg-5.col-md-5.col-sm-5.col-xs-12
+				h2.
+					¡Bienvenido! Acá encontrarás una caja para cada una de tus necesidades dentro de brm. Cajas grandes con todos los links que debes utilizar diariamente, cajas pequeñas pensadas en ayudarte con tareas diarias que te quitan tiempo y una caja personalizada, especialmente diseñada para ti. Ingresa ahora y descubre lo que brm tiene para ti.
 	
 		div.row
 			article.col-lg-12.col-md-12.col-sm-12.col-xs-12
@@ -51,15 +57,12 @@ body.login
 		div.row
 			div.nubes
 			div.sol
-			article.col-lg-7.col-md-7.col-sm-7.col-xs-12
-				h2.
-					En un lugar de la Mancha, de cuyo nombre no quiero acordarme, no ha mucho tiempo que vivía un hidalgo de los de lanza en astillero, adarga antigua, rocín flaco y galgo corredor.
-
+			//- article.col-lg-7.col-md-7.col-sm-7.col-xs-12
 				
-			div.col-lg-5.col-md-5.col-sm-5.hidden-xs
-				div.arbol.arbol1
-				div.arbol.arbol2
-				div.arbol.arbol3
+			//- div.col-lg-5.col-md-5.col-sm-5.hidden-xs
+			//- 	div.arbol.arbol1
+			//- 	div.arbol.arbol2
+			//- 	div.arbol.arbol3
 
 	//- Layout del Footer
 	include partials/footer.jade

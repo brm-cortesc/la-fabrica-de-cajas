@@ -108,6 +108,7 @@ $(document).on("ready", function () {
 
 	                    alto = 0;
 	                    OpenInNewTab("descarga.php");
+	                    $(".accionar-maquina").removeAttr("disabled");
 	                    return;
 	                  
 	                }
@@ -163,6 +164,8 @@ $(document).on("ready", function () {
 
 		/*accionamos la maquina*/
 		$(".accionar-maquina").on("click", function () {
+
+			$(this).attr("disabled", "disabled");
 			
 			machine = sprite({
 				context: canvas.getContext("2d"),

@@ -1,4 +1,4 @@
-/*! Fabrica de Cajas brm - v0.1.0 - 2015-08-27
+/*! Fabrica de Cajas brm - v0.1.0 - 2015-09-09
 * https://github.com/cortesc/HTML
 * Copyright (c) 2015 Cristian Cortés; Licensed MIT */
 a {
@@ -56,6 +56,11 @@ h6 {
 header {
   background-color: #163349;
 }
+header h2 {
+  color: #fff;
+  font-size: 1.3em;
+  margin-top: 5em;
+}
 header .logo {
   display: block;
   margin: 0.5em auto;
@@ -81,8 +86,8 @@ header .logo .img-responsive {
   width: 60%;
 }
 .container-maquina .accionar-maquina {
-  position: absolute;
-  right: 0;
+  position: relative;
+  left: 0.3em;
   ((null)): 0;
   display: block;
   font-size: 1.5em;
@@ -102,7 +107,7 @@ header .logo .img-responsive {
   -webkit-background-size: 100%;
   -moz-background-size: 100%;
   background-size: 100%;
-  min-height: 29em;
+  min-height: 19em;
   overflow: hidden;
 }
 .description h2 {
@@ -344,7 +349,7 @@ footer {
   -webkit-background-size: 203%;
   -moz-background-size: 203%;
   background-size: 203%;
-  height: 47vh;
+  height: 37vh;
   left: 0;
   overflow: hidden;
   position: absolute;
